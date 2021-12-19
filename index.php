@@ -1,29 +1,29 @@
 <?php 
 
-include 'koneksi.php';
+// include 'koneksi.php';
 
-error_reporting(0);
+// error_reporting(0);
 
-session_start();
+// session_start();
 
-if (isset($_SESSION['username'])) {
-    header("Location: berhasil_login.php");
-}
+// if (isset($_SESSION['username'])) {
+//     header("Location: berhasil_login.php");
+// }
 
-if (isset($_POST['submit'])) {
- $email = $_POST['email'];
- $password = md5($_POST['password']);
+// if (isset($_POST['submit'])) {
+//  $email = $_POST['email'];
+//  $password = md5($_POST['password']);
 
- $sql = "SELECT * FROM user WHERE user='$email' AND password='$password'";
- $result = mysqli_query($conn, $sql);
- if ($result->num_rows > 0) {
-  $row = mysqli_fetch_assoc($result);
-  $_SESSION['username'] = $row['username'];
-  header("Location: home.php");
- } else {
-  echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
- }
-}
+//  $sql = "SELECT * FROM user WHERE user='$email' AND password='$password'";
+//  $result = mysqli_query($conn, $sql);
+//  if ($result->num_rows > 0) {
+//   $row = mysqli_fetch_assoc($result);
+//   $_SESSION['username'] = $row['username'];
+//   header("Location: home.php");
+//  } else {
+//   echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
+//  }
+// }
 
 ?>
 
